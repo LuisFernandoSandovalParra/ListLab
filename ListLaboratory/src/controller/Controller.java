@@ -13,6 +13,8 @@ import views.JMainFrame;
 public class Controller implements ActionListener {
 	private Chain chain;
 	private JMainFrame mainFrame;
+	
+	//xddd
 
 	public Controller() {
 		chain = new Chain();
