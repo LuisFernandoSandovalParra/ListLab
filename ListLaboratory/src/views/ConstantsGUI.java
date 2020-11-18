@@ -22,7 +22,7 @@ public class ConstantsGUI {
 	// JPanelChain
 	public static final TitledBorder BORDER_JTEXTFIELD_JPC = BorderFactory.createTitledBorder(null,
 			"Ingrese el numero de la opcion deseada", TitledBorder.LEFT, TitledBorder.ABOVE_TOP);
-	public static final String STRING_MENU_CHAIN = "Escriba el numero de opcion deseada y pulse 'Continue'. \n \n  1. Crear un nuevo almacen. \n  2. Visualizar valor total del inventario.";
+	public static final String STRING_MENU_CHAIN = "Escriba el numero de opcion deseada y pulse 'Continue'. \n \n  1. Crear un nuevo almacen. \n  2. Visualizar valor total del inventario. \n  6. Visualizar todos los productos de cada Almacen.";
 	public static final CompoundBorder BORDER_AREA_MENU_CHAIN = BorderFactory.createCompoundBorder(
 			BorderFactory.createEmptyBorder(0, 25, 0, 25),
 			BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK), "MENU CADENA"));

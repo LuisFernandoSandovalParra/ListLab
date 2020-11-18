@@ -20,6 +20,7 @@ public class JMainPanel extends JPanel {
 	private JPanelWarehouseQuantifier panelWarehouseQuantifier;
 	private JPanelWarehouseShowTotal panelWarehouseShowTotal;
 	private JPanelProductSold panelProductSold;
+	private JPanelProductPerWarehouse panelProductsPerWarehouse;
 
 	public JMainPanel(ActionListener actionListener) {
 		setLayout(new BorderLayout());
@@ -181,9 +182,17 @@ public class JMainPanel extends JPanel {
 	public void setProductListSpacePS(String productList) {
 		panelProductSold.setProductListSpace(productList);
 	}
+	
+	public void setProductPerWarehousePS(String productList) {
+		panelProductsPerWarehouse.setProductListSpace(productList);
+	}
 
 	public String getNameWarehousePS() {
 		return panelProductSold.getNameWarehouse();
+	}
+	
+	public String getNameProductPerWarehousePS() {
+		return panelProductsPerWarehouse.getNameWarehouse();
 	}
 
 	public int getCodeProductFieldPS() {
@@ -192,5 +201,12 @@ public class JMainPanel extends JPanel {
 
 	public int getQuantityProductFieldPS() {
 		return panelProductSold.getQuantityProductField();
+	}
+
+	public void createPanelListProductsPerWarehouse(ActionListener actionListener, String showListWarehouse) {
+		removeAll();
+		add(panelProductsPerWarehouse = new JPanelProductPerWarehouse(actionListener, showListWarehouse));
+		revalidate();
+		repaint();		
 	}
 }

@@ -13,8 +13,6 @@ import views.JMainFrame;
 public class Controller implements ActionListener {
 	private Chain chain;
 	private JMainFrame mainFrame;
-	
-	//xdddola
 
 	public Controller() {
 		chain = new Chain();
@@ -63,6 +61,9 @@ public class Controller implements ActionListener {
 		case BTN_SHOW_PRODUCTS_PS:
 			showProductsPS();
 			break;
+		case BTN_SHOW_PRODUCT_WAREHOUSE_PS:
+			showProductPerWarehousePS();
+			break;
 		case BTN_REGISTER_SOLD_PRODUCT:
 			registerSoldProduct();
 			break;
@@ -78,7 +79,16 @@ public class Controller implements ActionListener {
 				mainFrame.createPanelChainForm(this);
 				break;
 			case 2:
-//				mainFrame.createPanelChainStats(this, chain.getTotalWarehouseValue());
+				mainFrame.createPanelChainStats(this, chain.getTotalWarehouseValue());
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				mainFrame.createPanelListProductsPerWarehouse(this, chain.showListWarehouse());
 				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opcion no valida");
@@ -182,6 +192,16 @@ public class Controller implements ActionListener {
 		try {
 			mainFrame.setProductListSpacePS(chain.showListProduct(mainFrame.getNameWarehousePS()));
 		} catch (Exception e1) {
+			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "No existen los productos");
+		}
+	}
+	
+	private void showProductPerWarehousePS() {
+		try {
+			mainFrame.setProductPerWarehousePS(chain.showListProduct(mainFrame.getNameProductPerWarehousePS()));
+		} catch (Exception e1) {
+			e1.printStackTrace();
 			JOptionPane.showMessageDialog(null, "No existen los productos");
 		}
 	}

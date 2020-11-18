@@ -1,6 +1,7 @@
 package models;
 
 import java.util.Comparator;
+import java.util.Iterator;
 
 import structures.SimpleList;
 
@@ -40,6 +41,15 @@ public class Chain {
 
 	public Warehouse getWarehouse(String warehouseName) {
 		return warehouseList.getNode(new Warehouse(warehouseName)).getValue();
+	}
+	
+	public int getTotalWarehouseValue() {
+		Iterator<Warehouse> iterator = warehouseList.iterator();
+		int totalValue = 0;
+		while (iterator.hasNext()) {
+			totalValue += iterator.next().getInventaryTotalValue();
+		}
+		return totalValue;
 	}
 
 	// Metodos fachada.

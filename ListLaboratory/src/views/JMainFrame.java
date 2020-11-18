@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import controller.Controller;
+
 public class JMainFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -148,5 +150,17 @@ public class JMainFrame extends JFrame {
 
 	public int getQuantityProductFieldPS() {
 		return mainPanel.getQuantityProductFieldPS();
+	}
+
+	public void createPanelListProductsPerWarehouse(ActionListener actionListener, String showListWarehouse) {
+		mainPanel.createPanelListProductsPerWarehouse(actionListener, showListWarehouse);
+	}
+
+	public void setProductPerWarehousePS(String showListProduct) {
+		mainPanel.setProductPerWarehousePS(showListProduct);
+	}
+
+	public String getNameProductPerWarehousePS() {
+		return mainPanel.getNameProductPerWarehousePS();
 	}
 }
