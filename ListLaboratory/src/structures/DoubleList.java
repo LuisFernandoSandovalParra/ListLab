@@ -36,13 +36,18 @@ public class DoubleList<T> implements Iterable<T>{
 		if (head == null) {
 			head = auxNode;
 			head.setPrevious(null);
+		}else if(productComparator.compare(head.getData(), data) == 1){
+			Node<T> auxHead = head;
+			head = auxNode;
+			head.setPrevious(null);
+			head.setNext(auxHead);
+			auxHead.setPrevious(head);
 		} else {
 			Node<T> actualNode = head;
 			boolean dataCompare = true;
 			boolean continueWhile = true;
 			while (actualNode.getNext() != null && continueWhile) {
 				if (productComparator.compare(actualNode.getData(), data) == 1) {
-					System.out.println("-------------->entro");
 					actualNode = actualNode.getPrevious();
 					auxNode.setNext(actualNode.getNext());
 					auxNode.setPrevious(actualNode);
@@ -52,10 +57,8 @@ public class DoubleList<T> implements Iterable<T>{
 					continueWhile = false;	
 					actualNode = actualNode.getNext();
 				}else {
-					System.out.println(1);
 					actualNode = actualNode.getNext();
 				}
-				System.out.println("--------");
 			}
 			if (dataCompare) {
 				actualNode.setNext(auxNode);
