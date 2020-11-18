@@ -81,15 +81,6 @@ public class Controller implements ActionListener {
 			case 2:
 				mainFrame.createPanelChainStats(this, chain.getTotalWarehouseValue());
 				break;
-			case 3:
-				break;
-			case 4:
-				break;
-			case 5:
-				break;
-			case 6:
-				mainFrame.createPanelListProductsPerWarehouse(this, chain.showListWarehouse());
-				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opcion no valida");
 				break;
@@ -127,6 +118,16 @@ public class Controller implements ActionListener {
 				break;
 			case 5:
 				mainFrame.createPanelProductSold(this, chain.showListWarehouse());
+				break;
+			case 6:
+				
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				mainFrame.createPanelListProductsPerWarehouse(this, chain.showListWarehouse());
 				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opcion no valida");

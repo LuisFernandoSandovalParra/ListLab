@@ -13,10 +13,12 @@ public class Warehouse {
 		this.inventaryTotalValue = 0;
 		this.warehouseName = nameWarehouse;
 		this.inventary = new DoubleList<>(new Comparator<Product>() {
-
-			@Override
 			public int compare(Product p1, Product p2) {
 				return p1.getCode() - p2.getCode();
+			}
+		}, new ProductComparatorOrder() {
+			public int compare(Product p1, Product p2) {
+				return p1.getCode() < p2.getCode() ? 0:1;
 			}
 		});
 	}

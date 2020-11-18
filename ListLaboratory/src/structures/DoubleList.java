@@ -3,13 +3,17 @@ package structures;
 import java.util.Comparator;
 import java.util.Iterator;
 
+import models.ProductComparatorOrder;
+
 public class DoubleList<T> implements Iterable<T>{
 	private Node<T> head;
 	private Comparator<T> comparator;
+	private Comparator<T> productComparator;
 
-	public DoubleList(Comparator<T> comparator) {
+	public DoubleList(Comparator<T> comparator, Comparator<T> productComparator) {
 		this.head = null;
 		this.comparator = comparator;
+		this.productComparator = productComparator;
 	}
 
 	public void insert(T data) {
@@ -21,6 +25,25 @@ public class DoubleList<T> implements Iterable<T>{
 			Node<T> actualNode = head;
 			while (actualNode.getNext() != null) {
 				actualNode = actualNode.getNext();
+			}
+			actualNode.setNext(auxNode);
+			auxNode.setPrevious(actualNode);
+		}
+	}
+	
+	public void insertOrder(T data) {
+		Node<T> auxNode = new Node<T>(data);
+		if (head == null) {
+			head = auxNode;
+			head.setPrevious(null);
+		} else {
+			Node<T> actualNode = head;
+			while (actualNode.getNext() != null) {
+				if (productComparator.compare(actualNode.getData(), data) == 0) {
+					actualNode = actualNode.getNext();
+				}else {
+					actualNode = actualNode.getNext();
+				}
 			}
 			actualNode.setNext(auxNode);
 			auxNode.setPrevious(actualNode);

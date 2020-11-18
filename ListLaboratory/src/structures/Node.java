@@ -28,4 +28,14 @@ public class Node<T> {
 	public void setPrevious(Node<T> previous) {
 		this.previous = previous;
 	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+	
+	
 }
