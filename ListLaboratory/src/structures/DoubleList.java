@@ -16,20 +16,20 @@ public class DoubleList<T> implements Iterable<T>{
 		this.productComparator = productComparator;
 	}
 
-	public void insert(T data) {
-		Node<T> auxNode = new Node<T>(data);
-		if (head == null) {
-			head = auxNode;
-			head.setPrevious(null);
-		} else {
-			Node<T> actualNode = head;
-			while (actualNode.getNext() != null) {
-				actualNode = actualNode.getNext();
-			}
-			actualNode.setNext(auxNode);
-			auxNode.setPrevious(actualNode);
-		}
-	}
+//	public void insert(T data) {
+//		Node<T> auxNode = new Node<T>(data);
+//		if (head == null) {
+//			head = auxNode;
+//			head.setPrevious(null);
+//		} else {
+//			Node<T> actualNode = head;
+//			while (actualNode.getNext() != null) {
+//				actualNode = actualNode.getNext();
+//			}
+//			actualNode.setNext(auxNode);
+//			auxNode.setPrevious(actualNode);
+//		}
+//	}
 	
 	public void insertOrder(T data) {
 		Node<T> auxNode = new Node<T>(data);
@@ -38,15 +38,29 @@ public class DoubleList<T> implements Iterable<T>{
 			head.setPrevious(null);
 		} else {
 			Node<T> actualNode = head;
-			while (actualNode.getNext() != null) {
-				if (productComparator.compare(actualNode.getData(), data) == 0) {
+			boolean dataCompare = true;
+			boolean continueWhile = true;
+			while (actualNode.getNext() != null && continueWhile) {
+				if (productComparator.compare(actualNode.getData(), data) == 1) {
+					System.out.println("-------------->entro");
+					actualNode = actualNode.getPrevious();
+					auxNode.setNext(actualNode.getNext());
+					auxNode.setPrevious(actualNode);
+					actualNode.setNext(auxNode);
+					actualNode.getNext().getNext().setPrevious(auxNode);
+					dataCompare = false;
+					continueWhile = false;	
 					actualNode = actualNode.getNext();
 				}else {
+					System.out.println(1);
 					actualNode = actualNode.getNext();
 				}
+				System.out.println("--------");
 			}
-			actualNode.setNext(auxNode);
-			auxNode.setPrevious(actualNode);
+			if (dataCompare) {
+				actualNode.setNext(auxNode);
+				auxNode.setPrevious(actualNode);
+			}
 		}
 	}
 

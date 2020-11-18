@@ -125,8 +125,6 @@ public class Controller implements ActionListener {
 			case 7:
 				break;
 			case 8:
-				break;
-			case 9:
 				mainFrame.createPanelListProductsPerWarehouse(this, chain.showListWarehouse());
 				break;
 			default:
@@ -231,10 +229,24 @@ public class Controller implements ActionListener {
 		c.chain.checkCreationWarehouse(new Warehouse("Katronix", "d12sda"));
 		c.chain.checkCreationWarehouse(new Warehouse("Viva", "asda"));
 		c.chain.checkAddProduct(new Warehouse("makro"), new Product(1, "Arroz", 20, 2000));
-		c.chain.checkAddProduct(new Warehouse("makro"), new Product(2, "Sal", 10, 1000));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(4, "Sal", 10, 1000));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(5, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(8, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(9, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(10, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(7, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(6, "Arbeja", 30, 800));
 		c.chain.checkAddProduct(new Warehouse("makro"), new Product(3, "Arbeja", 30, 800));
-		c.chain.checkAddProduct(new Warehouse("Olimpica"), new Product(1, "Arroz", 20, 2000));;
-		c.chain.checkAddProduct(new Warehouse("Olimpica"), new Product(2, "Sal", 10, 1000));
-		c.chain.checkAddProduct(new Warehouse("Olimpica"), new Product(3, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(2, "Arbeja", 30, 800));
+		c.chain.checkAddProduct(new Warehouse("makro"), new Product(4, "Arbeja", 30, 800));
+		try {
+			System.out.println(c.chain.showListProduct("makro"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		c.chain.checkAddProduct(new Warehouse("Olimpica"), new Product(1, "Arroz", 20, 2000));;
+//		c.chain.checkAddProduct(new Warehouse("Olimpica"), new Product(2, "Sal", 10, 1000));
+//		c.chain.checkAddProduct(new Warehouse("Olimpica"), new Product(3, "Arbeja", 30, 800));
 	}
 }

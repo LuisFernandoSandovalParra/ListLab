@@ -18,6 +18,7 @@ public class Warehouse {
 			}
 		}, new ProductComparatorOrder() {
 			public int compare(Product p1, Product p2) {
+				System.out.println(p1.getCode() + "<" + p2.getCode());
 				return p1.getCode() < p2.getCode() ? 0:1;
 			}
 		});
@@ -28,7 +29,7 @@ public class Warehouse {
 	}
 
 	private void addProduct(Product product) {
-		inventary.insert(product);
+		inventary.insertOrder(product);
 		insertTotalInventaryValue(product);
 	}
 

@@ -48,7 +48,7 @@ public class ConstantsGUI {
 			"Ingrese el numero de la opcion deseada", TitledBorder.LEFT, TitledBorder.ABOVE_TOP);
 	public static final String TEXT_BTN_CONTINUE = "Continue";
 	public static final String SUBTITLE_WAREHOUSE = "ALMACEN";
-	public static final String STRING_MENU_WAREHOUSE = "Escriba el numero de opcion deseada y pulse 'Continue'. \n \n  1. Registrar un nuevo producto. \n  2. Ver info de producto (por codigo) \n  3. Ver numero de productos registrados. \n  4. Ver valor total de productos (por almacen).  \n  5. Registrar venta de producto. \n\n  9. Visualizar todos los productos de cada Almacen.";
+	public static final String STRING_MENU_WAREHOUSE = "Escriba el numero de opcion deseada y pulse 'Continue'. \n \n  1. Registrar un nuevo producto. \n  2. Ver info de producto (por codigo) \n  3. Ver numero de productos registrados. \n  4. Ver valor total de productos (por almacen).  \n  5. Registrar venta de producto. \n   8. Visualizar todos los productos de cada Almacen.";
 	public static final CompoundBorder BORDER_AREA_MENU_WAREHOUSE = BorderFactory.createCompoundBorder(
 			BorderFactory.createEmptyBorder(0, 25, 0, 25),
 			BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.BLACK), "MENU ALMACEN"));
