@@ -14,7 +14,7 @@ public class Controller implements ActionListener {
 	private Chain chain;
 	private JMainFrame mainFrame;
 	
-	//xddd
+	//xdddola
 
 	public Controller() {
 		chain = new Chain();
